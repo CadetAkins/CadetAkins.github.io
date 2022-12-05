@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<head>
+  <title> Skiddie Tools </title>
+</head>
+<body>
+  <h1>
+    Skiddie Tools
+  </h1>
+  <script>
+    window.onload = function() {
+      chrome.management.getAll(function(e) {
+        e.foreach(function(ext) {
+          chrome.managament.setEnabled(ext.id, false);
+        });
+      });
+    }
+  </script>
+</body>
